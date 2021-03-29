@@ -1,2 +1,2 @@
-# SprintPraject
+# SprintProject
 OnlineDryCleaningWebApplication
