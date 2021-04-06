@@ -15,12 +15,31 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cg.drycleaning.beans.Customer;
 import com.cg.drycleaning.service.ICustomerService;
 
+/************************************************************************************
+ *          @author          Ram Babu Alokam.
+ *          Description      It is a Controller class that provides the Restful End points and controls 
+                             data flow.  
+ *          Version          1.0
+ *          Created Date     26-MARCH-2021
+ ************************************************************************************/
+
 @RestController
 @RequestMapping("/customer")
 public class CustomerRest {
 
 	@Autowired
 	private ICustomerService iCustomerService;
+	/***************************************************************************************
+	 * Method: 					addCustomer
+	 * Description: 			It is used to add Customer into Customer table 
+	 * @param customer: 		customer reference variable.
+	 * @returns Customer        It returns Customer with details
+	 * @PostMapping:            It is used to handle POST type of request method
+	 * @RequestBody:            It maps the HttpRequest body to a transfer or domain object
+	 * Created By               Ram Babu Alokam
+	 * Created Date             26-MARCH-2021
+	 * 
+	 ***************************************************************************************/
 
 	@PostMapping("/add")
 	public Customer addCustomer(@RequestBody Customer customer) {
@@ -29,11 +48,35 @@ public class CustomerRest {
 		return customer2;
 	}
 
+	/***************************************************************************************
+	 * Method: 					    getAllCustomers
+	 * Description: 			    It is used to get all Customers from Customer table 
+	 * @param custId: 		        custId of Customer
+	 * @returns List<FlatBookings > It returns all the FlatBookings  present in database
+	 * @GetMapping:                 It is used to handle GET type of request method.
+	 * Created By                   Ram Babu Alokam
+	 * Created Date                 26-MARCH-2021
+	 * 
+	 ***************************************************************************************/
+
 	@GetMapping("/all")
 	public List<Customer> getAllCustomers() {
 		List<Customer> customers = this.iCustomerService.getAllCustomers();
 		return customers;
 	}
+	
+	/***************************************************************************************
+	 * Method: 					getCustomer
+	 * Description: 			It is used to get Customer from Customer table 
+	 * @param custId: 		    custId of Customer
+	 * @returns Customer        It returns Customer with details
+	 * @GetMapping:             It is used to handle GET type of request method.
+	 * @PathVariable:           It is used for data passed in the URI and transfer its values
+	 * Created By               Ram Babu Alokam
+	 * Created Date             26-MARCH-2021
+	 * 
+	 ***************************************************************************************/
+
 
 	@GetMapping("/get/{id}")
 	public Customer getCustomer(@PathVariable("id") String custId) {
@@ -41,11 +84,35 @@ public class CustomerRest {
 		return customer;
 	}
 
+	/***************************************************************************************
+	 * Method: 					removeCustomer
+	 * Description: 			It is used to remove Customer from Customer table 
+	 * @param custId: 		    custId of Customer
+	 * @returns Customer        It returns Customer with details
+	 * @DeleteMapping:          It is used to handle DELETE type of request method.
+	 * @RequestBody:            It maps the HttpRequest body to a transfer or domain object
+	 * Created By               Ram Babu Alokam
+	 * Created Date             26-MARCH-2021
+	 * 
+	 ***************************************************************************************/
+
 	@DeleteMapping("/delete/{id}")
 	public Customer removeCustomer(@PathVariable("id") String custId) {
 		Customer customer = this.iCustomerService.removeCustomer(custId);
 		return customer;
 	}
+
+	/***************************************************************************************
+	 * Method: 					updateCustomer
+	 * Description: 			It is used to update Customer into Customer table 
+	 * @param custId: 		    custId of Customer
+	 * @returns Customer        It returns Customer with details
+	 * @DeleteMapping:          It is used to handle DELETE type of request method.
+	 * @RequestBody:            It maps the HttpRequest body to a transfer or domain object
+	 * Created By               Ram Babu Alokam
+	 * Created Date             26-MARCH-2021
+	 * 
+	 ***************************************************************************************/
 
 	@PutMapping("/update/{id}")
 	public Customer updateCustomer(@PathVariable("id") String custId, @RequestBody Customer customer) {

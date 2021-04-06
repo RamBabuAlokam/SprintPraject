@@ -11,6 +11,13 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+/************************************************************************************
+ *          @author          Ram Babu Alokam
+ *          Description      It is an Entity Class of Customer.  
+ *          Version          1.0
+ *          Created Date     23-MARCH-2021
+ ************************************************************************************/
+
 @Entity
 public class Customer {
 	@Id

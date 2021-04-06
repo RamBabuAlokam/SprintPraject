@@ -19,13 +19,13 @@ public class Payment {
 		super();
 	}
 
-	public Payment(long paymentId, String type, String status, Card card) {
+	public Payment(long paymentId, String type, String status, Card card, Order order) {
 		super();
 		this.paymentId = paymentId;
 		this.type = type;
 		this.status = status;
 		this.card = card;
-
+		this.order = order;
 	}
 
 	public long getPaymentId() {

@@ -8,7 +8,7 @@ public class InputValidatorImpl implements InputValidator {
 	@Override
 	public boolean nameValidator(String name) {
 		
-		return name.matches( "[A-Z][a-z]{3,}" );
+		return name.matches( "^[A-Za-z]\\w{3,29}$" );
 	}
 
 	@Override
@@ -26,6 +26,7 @@ public class InputValidatorImpl implements InputValidator {
 		return password.length()>=3;
 	}
 
+	@Override
 	public boolean userIdValidator(String userId) {
 		return userId.length()>=3;
 	}

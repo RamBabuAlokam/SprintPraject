@@ -46,7 +46,7 @@ public class BookingServiceTest {
 
 	@Test
 	public void getAllBookingTest() {
-		assertEquals(4, iBookingService.getAllBookings().size());
+		assertEquals(5, iBookingService.getAllBookings().size());
 	}
 
 	@Test
