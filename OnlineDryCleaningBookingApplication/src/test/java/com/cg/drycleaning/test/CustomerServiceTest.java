@@ -128,7 +128,7 @@ public class CustomerServiceTest {
 		customer2.setAddress(address2);
 		iCustomerService.addCustomer(customer2);
 		iCustomerService.addCustomer(customer);
-		assertEquals(10, iCustomerService.getAllCustomers().size());
+		assertEquals(9, iCustomerService.getAllCustomers().size());
 		System.out.println(iCustomerService.getAllCustomers().size());
 	}
 

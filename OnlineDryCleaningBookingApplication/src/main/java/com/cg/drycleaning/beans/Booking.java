@@ -10,6 +10,13 @@ import javax.persistence.OneToOne;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/******************************************************************************
+ *          @author         D. Manoj Kumar Reddy
+ *          Description     It is an entity class that has various data members
+ *         	Version         1.0
+ *         	Created Date    23 MARCH 2021
+ ******************************************************************************/
+
 @Entity
 public class Booking {
 	@Id

@@ -24,7 +24,7 @@ import com.cg.drycleaning.service.ICustomerService;
  ************************************************************************************/
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/v1")
 public class CustomerRest {
 
 	@Autowired
@@ -41,7 +41,7 @@ public class CustomerRest {
 	 * 
 	 ***************************************************************************************/
 
-	@PostMapping("/add")
+	@PostMapping("/customer")
 	public Customer addCustomer(@RequestBody Customer customer) {
 		Customer customer2 = null;
 		customer2 = this.iCustomerService.addCustomer(customer);
@@ -59,7 +59,7 @@ public class CustomerRest {
 	 * 
 	 ***************************************************************************************/
 
-	@GetMapping("/all")
+	@GetMapping("/customer")
 	public List<Customer> getAllCustomers() {
 		List<Customer> customers = this.iCustomerService.getAllCustomers();
 		return customers;
@@ -78,7 +78,7 @@ public class CustomerRest {
 	 ***************************************************************************************/
 
 
-	@GetMapping("/get/{id}")
+	@GetMapping("/customer/{id}")
 	public Customer getCustomer(@PathVariable("id") String custId) {
 		Customer customer = this.iCustomerService.getCustomer(custId);
 		return customer;
@@ -96,7 +96,7 @@ public class CustomerRest {
 	 * 
 	 ***************************************************************************************/
 
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/customer/{id}")
 	public Customer removeCustomer(@PathVariable("id") String custId) {
 		Customer customer = this.iCustomerService.removeCustomer(custId);
 		return customer;
@@ -114,7 +114,7 @@ public class CustomerRest {
 	 * 
 	 ***************************************************************************************/
 
-	@PutMapping("/update/{id}")
+	@PutMapping("/customer/{id}")
 	public Customer updateCustomer(@PathVariable("id") String custId, @RequestBody Customer customer) {
 		Customer customer2 = this.iCustomerService.updateCustomer(custId, customer);
 		return customer2;
