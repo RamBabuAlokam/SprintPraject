@@ -99,15 +99,15 @@ public class CustomerServiceImpl implements ICustomerService {
 	 *************************************************************************************/
 
 	@Override
-	public Customer updateCustomer(String custId, Customer customer) {
+	public Customer updateCustomer(Customer customer) {
 		Optional<Customer> optionalCustomer = null;
 		Customer customer2 = null;
-		optionalCustomer = customerRepository.findById(custId);
+		optionalCustomer = customerRepository.findById(customer.getUserId());
 		if (optionalCustomer.isPresent()) {
 			customer2 = customerRepository.save(customer);
 			return customer2;
 		} else {
-			throw new EntityUpdationException("Customer With Id " + custId + " does Not Exist.");
+			throw new EntityUpdationException("Customer With Id " + customer.getUserId() + " does Not Exist.");
 		}
 
 	}

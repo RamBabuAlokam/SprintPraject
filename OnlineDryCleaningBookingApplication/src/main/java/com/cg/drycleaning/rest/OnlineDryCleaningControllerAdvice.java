@@ -10,6 +10,8 @@ import com.cg.drycleaning.exception.EntityCreationException;
 import com.cg.drycleaning.exception.EntityDeletionException;
 import com.cg.drycleaning.exception.EntityNotFoundException;
 import com.cg.drycleaning.exception.EntityUpdationException;
+import com.cg.drycleaning.exception.PasswordNotMatchException;
+import com.cg.drycleaning.exception.UserNotFoundException;
 
 @RestControllerAdvice
 public class OnlineDryCleaningControllerAdvice {
@@ -42,6 +44,10 @@ public class OnlineDryCleaningControllerAdvice {
 	@ExceptionHandler(value = { EntityNotFoundException.class })
 	public ResponseEntity<String> handleEntityNotFoundException(Exception exception) {
 		return new ResponseEntity<String>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	@ExceptionHandler(value = {UserNotFoundException.class,PasswordNotMatchException.class})
+	public ResponseEntity<String> handleUserException(Exception e){
+		return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
 	}
 
 }

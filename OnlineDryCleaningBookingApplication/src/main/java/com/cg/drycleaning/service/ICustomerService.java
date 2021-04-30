@@ -10,7 +10,7 @@ public interface ICustomerService {
 
 	Customer removeCustomer(String custId);
 
-	Customer updateCustomer(String custId, Customer customer);
+	Customer updateCustomer(Customer customer);
 
 	Customer getCustomer(String custId);
 

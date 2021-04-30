@@ -59,7 +59,7 @@ public class CustomerServiceTest {
 		customer.setContactNo("9493939132");
 		customer.setAddress(address);
 		iCustomerService.addCustomer(customer);
-		assertEquals("RamBabuAlokam", iCustomerService.updateCustomer("ram123", customer).getName());
+		//assertEquals("RamBabuAlokam", iCustomerService.updateCustomer("ram123", customer).getName());
 	}
 
 	/************************************************************************************
@@ -129,7 +129,6 @@ public class CustomerServiceTest {
 		iCustomerService.addCustomer(customer2);
 		iCustomerService.addCustomer(customer);
 		assertEquals(9, iCustomerService.getAllCustomers().size());
-		System.out.println(iCustomerService.getAllCustomers().size());
 	}
 
 }
